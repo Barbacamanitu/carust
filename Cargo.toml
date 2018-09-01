@@ -1,0 +1,10 @@
+[package]
+name = "carust"
+version = "0.1.0"
+authors = ["russ"]
+
+[dependencies]
+gfx = "0.17.1"
+glutin ="*"
+gfx_window_glutin = "*"
+gfx_device_gl = "0.15.3"
