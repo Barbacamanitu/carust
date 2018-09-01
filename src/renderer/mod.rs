@@ -25,6 +25,11 @@ pub struct RenderWindow {
     is_running: bool,
 }
 
+struct Dimensions<T> {
+    width: T,
+    height: T,
+}
+
 impl RenderWindow {
 
     pub fn is_running(&self) -> bool {
@@ -51,11 +56,10 @@ impl RenderWindow {
 
 
     pub fn new() -> RenderWindow {
-
         let events_loop = glutin::EventsLoop::new();
         let windowbuilder = glutin::WindowBuilder::new()
         .with_title("Render Window".to_string())
-        .with_dimensions(512, 512);
+        .with_dimensions(glutin::dpi::LogicalSize::new(512.0, 512.0));
         let contextbuilder = glutin::ContextBuilder::new()
         .with_gl(GlRequest::Specific(OpenGl,(3,2)))
         .with_vsync(true);
